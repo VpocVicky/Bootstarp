@@ -13,7 +13,7 @@
     <!-- navbar -->
     <div class="row">
         <div class="col-12">
-            <nav class="navbar navbar-expand-lg bg-dark " style="height: 45px;">
+            <nav class="navbar navbar-expand-lg bg-dark " style="height: 40px;">
                 <div class="container">
                     <!-- <a class="navbar-brand" href="#">Navbar w/ text</a> -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -29,7 +29,7 @@
                                 <a class="nav-link text-white " href="#">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Posts</a>
+                                <a class="nav-link text-white" href="./post.html">Posts</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="#">Categories</a>
@@ -79,7 +79,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <nav class="navbar navbar-dark bg-primary">
+            <nav class="navbar navbar-dark bg-primary py-0">
                 <div class="container">
                     <h1 class="text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -103,7 +103,7 @@
                             <path
                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>Add Post</button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -122,9 +122,9 @@
                                             <label for="message-text" class="col-form-label">Category</label>
                                             <!-- <textarea class="form-control" id="message-text"></textarea> -->
                                             <select class="form-select" aria-label="Default select example">
-                                                <option selected value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option selected value="1">Web Development</option>
+                                                <option value="2">Java</option>
+                                                <option value="3">Spring boot</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
@@ -134,7 +134,7 @@
 
                                         <div class="mb-3">
                                             <label for="floatingTextarea" class="col-form-label">Body</label>
-                                            <textarea class="form-control" placeholder="Leave a comment here"
+                                            <textarea class="form-control" name="editor" placeholder="Leave a comment here"
                                                 id="floatingTextarea"></textarea>
 
                                         </div>
@@ -152,23 +152,82 @@
 
             <div class="col-3">
                 <div class="d-grid gap-2">
-                    <button class="btn btn-success" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor"
+                    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#cateModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" 
                             class="bi bi-plus" viewBox="0 0 16 16">
                             <path
                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>Add Category</button>
+                        <div class="modal fade modal-lg" id="cateModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-success text-white">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Category</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body ">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Title</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success">Save Changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="col-3">
                 <div class="d-grid gap-2">
-                    <button class="btn btn-warning" type="button">
+                    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#addUserModal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor"
                             class="bi bi-plus" viewBox="0 0 16 16">
                             <path
                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>Add User</button>
+                        <div class="modal fade modal-lg" id="addUserModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning text-white">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="name" class="col-form-label">Name</label>
+                                            <input type="text" class="form-control" id="name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="col-form-label">Email</label>
+                                            <input type="text" class="form-control" id="email">
+                                            <!-- <textarea class="form-control" id="message-text"></textarea> -->
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="col-form-label">Password</label>
+                                            <input type="password" class="form-control" id="password">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="col-form-label">Confirm Password</label>
+                                            <input type="password" class="form-control" id="password">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-warning">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -315,7 +374,7 @@
                             <path
                                 d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
                         </svg>
-
+                        <!-- <span class="h1">7</span> -->
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                         <a href="#" class="btn btn-outline-light btn-sm my-1 ">View</a>
                     </div>
@@ -356,6 +415,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+        <script src="//cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('editor');
+            </script>
+
 </body>
 
 </html>
